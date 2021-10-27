@@ -1,0 +1,24 @@
+<odoo>
+
+       <record id="form_view_assureur" model="ir.ui.view">
+               <field name="name" > assureur form</field>
+               <field name="model">assureur.assureur</field>
+               <field name="arch" type="xml">
+                   <form>
+                       <sheet>
+                           <group>
+                               <field name="name"/>
+                           </group>
+                       </sheet>
+                   </form>
+               </field>
+       </record>
+
+
+      <record id="assureur_action" model="ir.actions.act_window">
+                <field name="name"> Assureur</field>
+                <field name="res_model">assureur.assureur</field>
+                <field name="view_mode">tree,form,graph</field>
+        </record>
+        <menuitem name="Assureur" id="assureur_menu" parent="insurance_menu" action="assureur_action"/>
+</odoo>

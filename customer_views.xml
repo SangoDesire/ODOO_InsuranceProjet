@@ -1,0 +1,28 @@
+
+<odoo>
+       <record id="inherit_view_partner_form" model="ir.ui.view">
+               <field name="name" > res.partner.form</field>
+               <field name="inherit_id" ref="base.view_partner_form"/>
+               <field name="model">res.partner</field>
+               <field name="arch" type="xml">
+                   <field name="function" position="before">
+                       <field name="num_police"/>
+                       <field name="souscripteur_id"/>
+
+                   </field>
+               </field>
+       </record>
+
+          <record id="client_action" model="ir.actions.act_window">
+                <field name="name"> Clients</field>
+                <field name="res_model">res.partner</field>
+                <field name="view_mode">tree,form,graph</field>
+        </record>
+
+    <menuitem name="Clients" id="client_menu" parent="insurance_menu" action="client_action"/>
+
+
+
+</odoo>
+
+
